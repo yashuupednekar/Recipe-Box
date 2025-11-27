@@ -34,7 +34,7 @@ const CommunityPage = () => {
 
   const fetchForumPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/forum");
+      const response = await axios.get("https://recipe-box-1.onrender.com/api/forum");
       setForumPosts(response.data);
     } catch (error) {
       setError("Failed to fetch forum posts.");
@@ -108,7 +108,7 @@ const CommunityPage = () => {
                 {post.image && (
                   <Card.Img
                     variant="top"
-                    src={`http://localhost:5000/uploads/${post.image}`}
+                    src={`https://recipe-box-1.onrender.com/uploads/${post.image}`}
                     style={{ height: "200px", objectFit: "cover" }}
                   />
                 )}

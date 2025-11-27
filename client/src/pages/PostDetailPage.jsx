@@ -35,7 +35,7 @@ const PostDetailPage = () => {
 
   const fetchPost = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/forum/${id}`);
+      const response = await axios.get(`https://recipe-box-1.onrender.com/api/forum/${id}`);
       setPost(response.data);
     } catch (error) {
       setError("Failed to fetch the post.");
@@ -47,7 +47,7 @@ const PostDetailPage = () => {
   const fetchComments = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/comment/${id}/comments/forum`
+        `https://recipe-box-1.onrender.com/api/comment/${id}/comments/forum`
       );
       setComments(response.data);
     } catch (error) {
@@ -57,7 +57,7 @@ const PostDetailPage = () => {
 
   const fetchRandomPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/forum");
+      const response = await axios.get("https://recipe-box-1.onrender.com/api/forum");
       const allPosts = response.data;
       const shuffledPosts = allPosts.sort(() => 0.5 - Math.random()); // Shuffle posts
       const selectedPosts = shuffledPosts.slice(0, 3); // Pick 3 random posts
@@ -71,7 +71,7 @@ const PostDetailPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/comment/${id}/comments/forum`,
+        `https://recipe-box-1.onrender.com/api/comment/${id}/comments/forum`,
         { text: commentText },
         {
           headers: {
@@ -88,7 +88,7 @@ const PostDetailPage = () => {
 
   const handleDeleteComment = async (commentId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/comment/${commentId}`, {
+      await axios.delete(`https://recipe-box-1.onrender.com/api/comment/${commentId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -132,7 +132,7 @@ const PostDetailPage = () => {
               {post.image && (
                 <Card.Img
                   variant="top"
-                  src={`http://localhost:5000/uploads/${post.image}`}
+                  src={`https://recipe-box-1.onrender.com/uploads/${post.image}`}
                   style={{ height: "300px", objectFit: "cover" }}
                 />
               )}
@@ -207,7 +207,7 @@ const PostDetailPage = () => {
                     {randomPost.image && (
                       <Card.Img
                         variant="top"
-                        src={`http://localhost:5000/uploads/${randomPost.image}`}
+                        src={`https://recipe-box-1.onrender.com/uploads/${randomPost.image}`}
                         style={{ height: "150px", objectFit: "cover" }}
                       />
                     )}

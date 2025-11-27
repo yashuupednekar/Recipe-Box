@@ -39,7 +39,7 @@ const RecipeDetail = () => {
   const fetchRecipe = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/recipe/${id}`
+        `https://recipe-box-1.onrender.com/api/recipe/${id}`
       );
       setRecipe(response.data);
     } catch (error) {
@@ -51,7 +51,7 @@ const RecipeDetail = () => {
 
   const fetchRandomRecipes = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/recipe");
+      const response = await axios.get("https://recipe-box-1.onrender.com/api/recipe");
       const allRecipes = response.data;
       const shuffledRecipes = allRecipes.sort(() => 0.5 - Math.random());
       const selectedRecipes = shuffledRecipes.slice(0, 3);
@@ -64,7 +64,7 @@ const RecipeDetail = () => {
   const fetchComments = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/comment/${id}/comments/recipe`
+        `https://recipe-box-1.onrender.com/api/comment/${id}/comments/recipe`
       );
       setComments(response.data);
     } catch (error) {
@@ -81,7 +81,7 @@ const RecipeDetail = () => {
       }
 
       const response = await axios.post(
-        `http://localhost:5000/api/comment/${id}/comments/recipe`,
+        `https://recipe-box-1.onrender.com/api/comment/${id}/comments/recipe`,
         { text: newComment },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -104,7 +104,7 @@ const RecipeDetail = () => {
       }
 
       const response = await axios.post(
-        `http://localhost:5000/api/recipe/${id}/rate`,
+        `https://recipe-box-1.onrender.com/api/recipe/${id}/rate`,
         { rating },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -126,7 +126,7 @@ const RecipeDetail = () => {
       }
 
       await axios.post(
-        `http://localhost:5000/api/recipe/${id}/save`,
+        `https://recipe-box-1.onrender.com/api/recipe/${id}/save`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

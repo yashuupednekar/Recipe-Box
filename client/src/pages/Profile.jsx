@@ -30,7 +30,7 @@ const Profile = () => {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          "http://localhost:5000/api/auth/profile",
+          "https://recipe-box-1.onrender.com/api/auth/profile",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -170,7 +170,7 @@ const Profile = () => {
         formDataToSend.append("profilePic", formData.profilePic);
 
       const response = await axios.put(
-        "http://localhost:5000/api/auth/profile",
+        "https://recipe-box-1.onrender.com/api/auth/profile",
         formDataToSend,
         {
           headers: {

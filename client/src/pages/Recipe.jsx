@@ -41,7 +41,7 @@ const RecipeList = () => {
 
   const fetchRecipes = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/recipe");
+      const response = await axios.get("https://recipe-box-1.onrender.com/api/recipe");
       setRecipes(response.data);
     } catch (error) {
       setError("Failed to fetch recipes. Please try again later.");
@@ -103,7 +103,7 @@ const RecipeList = () => {
   const saveRecipe = async (recipeId) => {
     try {
       await axios.post(
-        `http://localhost:5000/api/recipe/${recipeId}/save`,
+        `https://recipe-box-1.onrender.com/api/recipe/${recipeId}/save`,
         {},
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },

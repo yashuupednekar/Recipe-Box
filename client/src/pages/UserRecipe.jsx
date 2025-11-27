@@ -27,7 +27,7 @@ const UserRecipe = () => {
     image: "",
   });
 
-  const BASE_URL = "http://localhost:5000/api/recipe";
+  const BASE_URL = "https://recipe-box-1.onrender.com/api/recipe";
 
   // Fetch recipes on component mount
   useEffect(() => {

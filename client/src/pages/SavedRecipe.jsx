@@ -40,7 +40,7 @@ const SavedRecipes = () => {
 
       console.log("Fetching saved recipes...");
       const response = await axios.get(
-        "http://localhost:5000/api/recipe/saved-recipes",
+        "https://recipe-box-1.onrender.com/api/recipe/saved-recipes",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -77,7 +77,7 @@ const SavedRecipes = () => {
 
       console.log("Unsaving recipe:", recipeToUnsave);
       await axios.delete(
-        `http://localhost:5000/api/recipe/${recipeToUnsave}/unsave`,
+        `https://recipe-box-1.onrender.com/api/recipe/${recipeToUnsave}/unsave`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

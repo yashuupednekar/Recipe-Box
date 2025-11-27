@@ -51,7 +51,7 @@ const MyCommunityPosts = () => {
       }
 
       const response = await axios.get(
-        "http://localhost:5000/api/forum/my-community-posts",
+        "https://recipe-box-1.onrender.com/api/forum/my-community-posts",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -83,7 +83,7 @@ const MyCommunityPosts = () => {
       }
 
       const response = await axios.post(
-        "http://localhost:5000/api/forum",
+        "https://recipe-box-1.onrender.com/api/forum",
         formData,
         {
           headers: {
@@ -119,7 +119,7 @@ const MyCommunityPosts = () => {
       }
 
       const response = await axios.put(
-        `http://localhost:5000/api/forum/${editPost.id}`,
+        `https://recipe-box-1.onrender.com/api/forum/${editPost.id}`,
         formData,
         {
           headers: {
@@ -150,7 +150,7 @@ const MyCommunityPosts = () => {
         return;
       }
 
-      await axios.delete(`http://localhost:5000/api/forum/${postId}`, {
+      await axios.delete(`https://recipe-box-1.onrender.com/api/forum/${postId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMyPosts(myPosts.filter((post) => post._id !== postId));
@@ -206,7 +206,7 @@ const MyCommunityPosts = () => {
                   {post.image && (
                     <Card.Img
                       variant="top"
-                      src={`http://localhost:5000/uploads/${post.image}`}
+                      src={`https://recipe-box-1.onrender.com/uploads/${post.image}`}
                       style={{ height: "200px", objectFit: "cover" }}
                     />
                   )}
